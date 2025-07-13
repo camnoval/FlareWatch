@@ -5,7 +5,8 @@ import plotly.graph_objects as go
 from datetime import datetime
 
 # === Config ===
-XML_PATH = r"C:\Users\camer\Documents\Coding\MSAppleWatch\ms_patient_extended_export_v2.xml" # Use path to your export
+XML_PATH = "https://raw.githubusercontent.com/camnoval/FlareWatch/main/ms_patient_extended_export_v2.xml"
+
 
 GAIT_METRICS = {
     'HKQuantityTypeIdentifierWalkingSpeed': ('Walking Speed (m/s)', 0.8, 'low'),
