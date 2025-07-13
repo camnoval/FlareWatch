@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 from datetime import datetime
 
 # === Config ===
-XML_PATH = "https://raw.githubusercontent.com/camnoval/FlareWatch/main/ms_patient_extended_export_v2.xml"
+XML_PATH = "https://github.com/camnoval/FlareWatch/raw/refs/heads/main/ms_patient_extended_export_v2.xml"
 
 
 GAIT_METRICS = {
