@@ -3,10 +3,11 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
 from datetime import datetime
+import requests
+from io import BytesIO
 
 # === Config ===
-XML_PATH = "https://github.com/camnoval/FlareWatch/raw/refs/heads/main/ms_patient_extended_export_v2.xml"
-
+XML_PATH = "https://raw.githubusercontent.com/camnoval/FlareWatch/main/ms_patient_extended_export_v2.xml"
 
 GAIT_METRICS = {
     'HKQuantityTypeIdentifierWalkingSpeed': ('Walking Speed (m/s)', 0.8, 'low'),
@@ -23,7 +24,13 @@ FLARE_DATES = [
 # === Parser ===
 @st.cache_data
 def parse_apple_health_xml(path):
-    tree = ET.parse(path)
+    if path.startswith("http"):
+        response = requests.get(path)
+        response.raise_for_status()
+        xml_data = response.content
+        tree = ET.parse(BytesIO(xml_data))
+    else:
+        tree = ET.parse(path)
     root = tree.getroot()
 
     records = []
@@ -35,7 +42,7 @@ def parse_apple_health_xml(path):
             value = float(record.get('value'))
             date = pd.to_datetime(record.get('startDate')).date()
             unit = record.get('unit')
-        except:
+        except Exception:
             continue
         records.append({
             'Metric': GAIT_METRICS[rtype][0],
