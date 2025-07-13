@@ -1,0 +1,11 @@
+import requests
+from io import BytesIO
+import xml.etree.ElementTree as ET
+
+url = "https://github.com/camnoval/FlareWatch/raw/refs/heads/main/ms_patient_extended_export_v2.xml"
+response = requests.get(url)
+response.raise_for_status()
+xml_data = response.content
+tree = ET.parse(BytesIO(xml_data))
+root = tree.getroot()
+print(f"Root tag: {root.tag}")

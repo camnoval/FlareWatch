@@ -7,7 +7,7 @@ import requests
 from io import BytesIO
 
 # === Config ===
-XML_PATH = "https://raw.githubusercontent.com/camnoval/FlareWatch/main/ms_patient_extended_export_v2.xml"
+XML_PATH = "https://github.com/camnoval/FlareWatch/raw/refs/heads/main/ms_patient_extended_export_v2.xml"
 
 GAIT_METRICS = {
     'HKQuantityTypeIdentifierWalkingSpeed': ('Walking Speed (m/s)', 0.8, 'low'),
