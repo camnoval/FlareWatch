@@ -6,7 +6,7 @@ from datetime import datetime
 import os
 
 # === Config ===
-XML_DIR = "applehealthdata"
+XML_DIR = "applehealthdata/apple_health_export"
 
 GAIT_METRICS = {
     'HKQuantityTypeIdentifierWalkingSpeed': ('Walking Speed (m/s)', 0.8, 'low'),
