@@ -3,11 +3,10 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
 from datetime import datetime
-import requests
-from io import BytesIO
+import os
 
 # === Config ===
-XML_PATH = "https://github.com/camnoval/FlareWatch/raw/refs/heads/main/ms_patient_extended_export_v2.xml"
+XML_DIR = "applehealthdata"
 
 GAIT_METRICS = {
     'HKQuantityTypeIdentifierWalkingSpeed': ('Walking Speed (m/s)', 0.8, 'low'),
@@ -24,13 +23,7 @@ FLARE_DATES = [
 # === Parser ===
 @st.cache_data
 def parse_apple_health_xml(path):
-    if path.startswith("http"):
-        response = requests.get(path)
-        response.raise_for_status()
-        xml_data = response.content
-        tree = ET.parse(BytesIO(xml_data))
-    else:
-        tree = ET.parse(path)
+    tree = ET.parse(path)
     root = tree.getroot()
 
     records = []
@@ -55,7 +48,6 @@ def parse_apple_health_xml(path):
     df = pd.DataFrame(records)
     return df
 
-# === Flare Region Generator ===
 def get_flare_shapes(ymin, ymax):
     shapes = []
     for start_str, end_str in FLARE_DATES:
@@ -72,7 +64,6 @@ def get_flare_shapes(ymin, ymax):
         })
     return shapes
 
-# === Chart Builder ===
 def build_chart(df, label, pop_thresh, direction):
     df = df.sort_values("Date")
     df["Smoothed"] = df["Value"].rolling(window=7, min_periods=1).mean()
@@ -86,24 +77,15 @@ def build_chart(df, label, pop_thresh, direction):
     fig.add_trace(go.Scatter(x=df["Date"], y=df["Value"], name="Raw", mode="lines"))
     fig.add_trace(go.Scatter(x=df["Date"], y=df["Smoothed"], name="Smoothed", mode="lines"))
 
-    # Personal thresholds
-    fig.add_trace(go.Scatter(
-        x=df["Date"], y=[warn_thresh]*len(df), name="Personal Caution (−1σ)",
-        line=dict(dash="dot", color="orange")
-    ))
-    fig.add_trace(go.Scatter(
-        x=df["Date"], y=[low_thresh]*len(df), name="Personal Alert (−2σ)",
-        line=dict(dash="dash", color="red")
-    ))
+    fig.add_trace(go.Scatter(x=df["Date"], y=[warn_thresh]*len(df), name="Personal Caution (−1σ)",
+                             line=dict(dash="dot", color="orange")))
+    fig.add_trace(go.Scatter(x=df["Date"], y=[low_thresh]*len(df), name="Personal Alert (−2σ)",
+                             line=dict(dash="dash", color="red")))
 
-    # Population threshold
     if pop_thresh is not None:
-        fig.add_trace(go.Scatter(
-            x=df["Date"], y=[pop_thresh]*len(df),
-            name="Population Threshold", line=dict(dash="dot", color="green")
-        ))
+        fig.add_trace(go.Scatter(x=df["Date"], y=[pop_thresh]*len(df), name="Population Threshold",
+                                 line=dict(dash="dot", color="green")))
 
-    # Flare region overlays
     shapes = get_flare_shapes(df["Value"].min(), df["Value"].max())
     fig.update_layout(
         title=f"{label} Over Time",
@@ -118,16 +100,29 @@ def build_chart(df, label, pop_thresh, direction):
 # === Streamlit UI ===
 st.set_page_config(page_title="MS Gait Tracker", layout="wide")
 st.title("🦿 MS Gait Tracker Dashboard")
-st.caption("Multi-metric flare-up detection from Apple Watch gait data")
+st.caption("Multi-patient gait analysis from Apple Watch Health XML")
 
-with st.spinner("Parsing XML export..."):
-    df_all = parse_apple_health_xml(XML_PATH)
+# === Load available patients ===
+xml_files = sorted([f for f in os.listdir(XML_DIR) if f.endswith(".xml")])
+patient_map = {f.replace(".xml", ""): os.path.join(XML_DIR, f) for f in xml_files}
+
+if not patient_map:
+    st.error("No patient XML files found.")
+    st.stop()
+
+# === Patient selection ===
+selected_patient = st.selectbox("Select a patient:", list(patient_map.keys()))
+xml_path = patient_map[selected_patient]
+
+# === Load & parse patient data ===
+with st.spinner(f"Parsing data for patient {selected_patient}..."):
+    df_all = parse_apple_health_xml(xml_path)
 
 if df_all.empty:
     st.error("No gait-related records found.")
     st.stop()
 
-# === Tabs for Each Metric ===
+# === Metric Tabs ===
 tabs = st.tabs([GAIT_METRICS[key][0] for key in GAIT_METRICS])
 
 for i, key in enumerate(GAIT_METRICS):

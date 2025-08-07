@@ -1,0 +1,453 @@
+[
+  {
+    "id": "patient_001",
+    "sex": "Male",
+    "height_cm": 163,
+    "weight_kg": 71,
+    "has_ms": true,
+    "conditions": [
+      "ms",
+      "hypertension",
+      "depression"
+    ],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Tysabri",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-21",
+        "drug": "Aubagio",
+        "action": "switch"
+      },
+      {
+        "date": "2025-06-07",
+        "drug": "Tysabri",
+        "action": "switch"
+      },
+      {
+        "date": "2025-06-07",
+        "drug": "Losartan",
+        "action": "start"
+      },
+      {
+        "date": "2025-06-07",
+        "drug": "Escitalopram",
+        "action": "start"
+      }
+    ],
+    "flares": [
+      [
+        "2025-06-04",
+        "2025-06-06"
+      ],
+      [
+        "2025-06-04",
+        "2025-06-08"
+      ]
+    ]
+  },
+  {
+    "id": "patient_002",
+    "sex": "Female",
+    "height_cm": 178,
+    "weight_kg": 92,
+    "has_ms": true,
+    "conditions": [
+      "ms",
+      "depression"
+    ],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Aubagio",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-18",
+        "drug": "Tecfidera",
+        "action": "switch"
+      },
+      {
+        "date": "2025-05-18",
+        "drug": "Sertraline",
+        "action": "start"
+      }
+    ],
+    "flares": [
+      [
+        "2025-07-19",
+        "2025-07-21"
+      ],
+      [
+        "2025-07-09",
+        "2025-07-11"
+      ]
+    ]
+  },
+  {
+    "id": "patient_003",
+    "sex": "Female",
+    "height_cm": 155,
+    "weight_kg": 58,
+    "has_ms": true,
+    "conditions": [
+      "ms",
+      "hypertension",
+      "diabetes"
+    ],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Ocrevus",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-25",
+        "drug": "Tysabri",
+        "action": "switch"
+      },
+      {
+        "date": "2025-05-25",
+        "drug": "Lisinopril",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-25",
+        "drug": "Jardiance",
+        "action": "start"
+      }
+    ],
+    "flares": [
+      [
+        "2025-06-01",
+        "2025-06-05"
+      ],
+      [
+        "2025-06-25",
+        "2025-06-28"
+      ]
+    ]
+  },
+  {
+    "id": "patient_004",
+    "sex": "Female",
+    "height_cm": 170,
+    "weight_kg": 83,
+    "has_ms": true,
+    "conditions": [
+      "ms",
+      "diabetes",
+      "depression"
+    ],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Tysabri",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-17",
+        "drug": "Tysabri",
+        "action": "increase dose"
+      },
+      {
+        "date": "2025-05-17",
+        "drug": "Metformin",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-17",
+        "drug": "Escitalopram",
+        "action": "start"
+      }
+    ],
+    "flares": [
+      [
+        "2025-08-01",
+        "2025-08-05"
+      ],
+      [
+        "2025-07-30",
+        "2025-08-02"
+      ]
+    ]
+  },
+  {
+    "id": "patient_005",
+    "sex": "Female",
+    "height_cm": 168,
+    "weight_kg": 50,
+    "has_ms": false,
+    "conditions": [],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Vitamin D",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-01",
+        "drug": "Ibuprofen",
+        "action": "start"
+      }
+    ],
+    "flares": []
+  },
+  {
+    "id": "patient_006",
+    "sex": "Male",
+    "height_cm": 165,
+    "weight_kg": 82,
+    "has_ms": true,
+    "conditions": [
+      "ms",
+      "hypertension",
+      "hyperlipidemia"
+    ],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Ocrevus",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-21",
+        "drug": "Ocrevus",
+        "action": "increase dose"
+      },
+      {
+        "date": "2025-06-12",
+        "drug": "Ocrevus",
+        "action": "increase dose"
+      },
+      {
+        "date": "2025-06-12",
+        "drug": "Losartan",
+        "action": "start"
+      },
+      {
+        "date": "2025-06-12",
+        "drug": "Atorvastatin",
+        "action": "start"
+      }
+    ],
+    "flares": [
+      [
+        "2025-08-01",
+        "2025-08-04"
+      ],
+      [
+        "2025-06-09",
+        "2025-06-11"
+      ],
+      [
+        "2025-05-26",
+        "2025-05-29"
+      ]
+    ]
+  },
+  {
+    "id": "patient_007",
+    "sex": "Male",
+    "height_cm": 189,
+    "weight_kg": 58,
+    "has_ms": true,
+    "conditions": [
+      "ms",
+      "depression"
+    ],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Ocrevus",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-21",
+        "drug": "Tecfidera",
+        "action": "switch"
+      },
+      {
+        "date": "2025-05-21",
+        "drug": "Sertraline",
+        "action": "start"
+      }
+    ],
+    "flares": [
+      [
+        "2025-06-19",
+        "2025-06-21"
+      ],
+      [
+        "2025-06-02",
+        "2025-06-05"
+      ],
+      [
+        "2025-07-25",
+        "2025-07-29"
+      ]
+    ]
+  },
+  {
+    "id": "patient_008",
+    "sex": "Female",
+    "height_cm": 164,
+    "weight_kg": 62,
+    "has_ms": true,
+    "conditions": [
+      "ms"
+    ],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Aubagio",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-25",
+        "drug": "Aubagio",
+        "action": "increase dose"
+      }
+    ],
+    "flares": [
+      [
+        "2025-07-06",
+        "2025-07-08"
+      ],
+      [
+        "2025-06-14",
+        "2025-06-16"
+      ],
+      [
+        "2025-05-07",
+        "2025-05-11"
+      ]
+    ]
+  },
+  {
+    "id": "patient_009",
+    "sex": "Female",
+    "height_cm": 180,
+    "weight_kg": 63,
+    "has_ms": true,
+    "conditions": [
+      "ms",
+      "hypertension"
+    ],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Ocrevus",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-26",
+        "drug": "Tecfidera",
+        "action": "switch"
+      },
+      {
+        "date": "2025-05-26",
+        "drug": "Amlodipine",
+        "action": "start"
+      }
+    ],
+    "flares": [
+      [
+        "2025-07-11",
+        "2025-07-14"
+      ],
+      [
+        "2025-07-02",
+        "2025-07-04"
+      ]
+    ]
+  },
+  {
+    "id": "patient_010",
+    "sex": "Female",
+    "height_cm": 160,
+    "weight_kg": 65,
+    "has_ms": true,
+    "conditions": [
+      "ms",
+      "hypertension",
+      "hyperlipidemia"
+    ],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Tysabri",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-20",
+        "drug": "Tecfidera",
+        "action": "switch"
+      },
+      {
+        "date": "2025-06-12",
+        "drug": "Ocrevus",
+        "action": "switch"
+      },
+      {
+        "date": "2025-06-12",
+        "drug": "Lisinopril",
+        "action": "start"
+      },
+      {
+        "date": "2025-06-12",
+        "drug": "Rosuvastatin",
+        "action": "start"
+      }
+    ],
+    "flares": [
+      [
+        "2025-07-22",
+        "2025-07-25"
+      ],
+      [
+        "2025-05-27",
+        "2025-05-30"
+      ]
+    ]
+  },
+  {
+    "id": "patient_011",
+    "sex": "Female",
+    "height_cm": 155,
+    "weight_kg": 59,
+    "has_ms": false,
+    "conditions": [],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Vitamin D",
+        "action": "start"
+      }
+    ],
+    "flares": []
+  },
+  {
+    "id": "patient_012",
+    "sex": "Male",
+    "height_cm": 156,
+    "weight_kg": 87,
+    "has_ms": false,
+    "conditions": [],
+    "medications": [
+      {
+        "date": "2025-05-01",
+        "drug": "Vitamin D",
+        "action": "start"
+      },
+      {
+        "date": "2025-05-01",
+        "drug": "Ibuprofen",
+        "action": "start"
+      }
+    ],
+    "flares": []
+  }
+]
