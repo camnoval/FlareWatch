@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9FFE5EA6-B5C7-45FE-BBA5-D17A100D943E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8CDE89C8-4B3D-4A01-812F-D57173E678D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gaitway Health/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "HealthKitManager"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "8CDE89C8-4B3D-4A01-812F-D57173E678D9 - e3515c898cb47e3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gaitway_Health.HealthKitManager.deinit"
+                  moduleName = "Gaitway Health.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/can145/Downloads/Gaitway%20Health/Gaitway%20Health/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "8CDE89C8-4B3D-4A01-812F-D57173E678D9 - e886e7e194496c6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gaitway_Health.HealthKitManager.__deallocating_deinit"
+                  moduleName = "Gaitway Health.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/can145/Downloads/Gaitway%20Health/Gaitway%20Health/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "8CDE89C8-4B3D-4A01-812F-D57173E678D9 - a538a9bfbe40daea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gaitway_Health.HealthKitManager.__allocating_init() -&gt; Gaitway_Health.HealthKitManager"
+                  moduleName = "Gaitway Health.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/can145/Downloads/Gaitway%20Health/Gaitway%20Health/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "8CDE89C8-4B3D-4A01-812F-D57173E678D9 - 2ed5ed62b7d28570"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gaitway_Health.HealthKitManager.init() -&gt; Gaitway_Health.HealthKitManager"
+                  moduleName = "Gaitway Health.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/can145/Downloads/Gaitway%20Health/Gaitway%20Health/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
